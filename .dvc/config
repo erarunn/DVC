@@ -1,0 +1,9 @@
+[core]
+remote = origin
+
+['remote "local_remote"']
+url = ../../dvc_remote
+
+['remote "origin"']
+url = ../../dvc_remote.dvc
+
