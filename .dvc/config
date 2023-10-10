@@ -1,9 +1,7 @@
 [core]
-remote = origin
-
+    remote = origin
 ['remote "local_remote"']
-url = ../../dvc_remote
-
+    url = ../../dvc_remote
 ['remote "origin"']
-url = ../../dvc_remote.dvc
-
+    url = s3://dvc
+    endpointurl = https://dagshub.com/erarunn/DVC.s3
