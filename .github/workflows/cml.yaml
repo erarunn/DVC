@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo pip install -r ./requirements.txt
           dagshub > report.md
-          dvc doctor
+          dvc > report.md
           
           cml comment create --publish --pr=false report.md
 
