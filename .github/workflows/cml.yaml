@@ -2,7 +2,7 @@ name: CML & DVC
 on: [push]
 jobs:
   train-and-report:
-    runs-on: DESKTOP-V5ILVNP
+    runs-on: windows
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
