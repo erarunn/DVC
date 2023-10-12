@@ -15,9 +15,9 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python --version
-          #python -m venv venv
-          #source venv/bin/activate
+          #py -3 -m --version
+          py -3 -m venv venv
+          source venv/bin/activate
           pip install -r ./requirements.txt
           dagshub > report.md
           dvc > report.md
