@@ -5,15 +5,7 @@ jobs:
     runs-on: windows
     container: ghcr.io/dvcorg/cml-py3
     steps:
-      - uses: actions/setup-node@v1  # https://github.com/iterative/cml/issues/1377
-        with:
-          node-version: '16'
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - uses: iterative/setup-cml@v1
-      - uses: iterative/setup-dvc@v1
+     
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
