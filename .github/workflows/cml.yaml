@@ -6,17 +6,17 @@ jobs:
     container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.8'
       - uses: iterative/setup-cml@v1
       - uses: iterative/setup-dvc@v1
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python -m venv dvcenv
-          source venv/bin/activate
+          python3.8 -m venv dvcenv
+          source dvcenv/bin/activate
           sudo pip install -r ./requirements.txt
           dagshub > report.md
           dvc > report.md
