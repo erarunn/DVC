@@ -10,8 +10,8 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          
-          sudo -H pip install -r ./requirements.txt
+          pwd
+          sudo pip install -r ./requirements.txt
           dagshub > report.md
           dvc doctor
           
