@@ -2,7 +2,7 @@ name: CML & DVC
 on: [push]
 jobs:
   train-and-report:
-    runs-on: windows
+    runs-on: ubuntu-latest
     container: ghcr.io/dvcorg/cml-py3
     steps:
      
