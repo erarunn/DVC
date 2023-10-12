@@ -4,6 +4,9 @@ jobs:
   train-and-report:
     runs-on: windows
     steps:
+      - uses: actions/setup-node@v1  # https://github.com/iterative/cml/issues/1377
+        with:
+          node-version: '16'
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
