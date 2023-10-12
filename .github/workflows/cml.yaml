@@ -3,7 +3,7 @@ on: [push]
 jobs:
   train-and-report:
     runs-on: ubuntu-latest
-    container: ghcr.io/dvcorg/cml-py3
+    container: dvcorg/cml-py3
     steps:
      
       - name: Train model
