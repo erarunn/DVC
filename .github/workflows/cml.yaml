@@ -12,9 +12,10 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ls -l
-          sudo pip install -r ./requirements.txt
           dagshub > report.md
           dvc doctor
+          sudo pip install -r ./requirements.txt
+
           
           cml comment create --publish --pr=false report.md
 
