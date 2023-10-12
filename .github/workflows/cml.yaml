@@ -1,0 +1,21 @@
+name: CML Report
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+  
+      # Needed for https://github.com/iterative/example-repos-dev/issues/225
+      - name: Installs JSON5
+        run: npm install -g json5
+      - name: Generate metrics report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          dvc
+          dagshub
+
+
+          cml comment create --publish --pr=false report.md
