@@ -13,11 +13,12 @@ jobs:
           node-version: '16'
 
       - uses: iterative/setup-cml@v1
-      - uses: iterative/setup-dvc@v1
+      #- uses: iterative/setup-dvc@v1
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          pip install pyOpenSSL
           python --version
           python -m venv venv
           source venv/bin/activate
