@@ -5,10 +5,11 @@ jobs:
     runs-on: Arun
     #container: ghcr.io/iterative/cml:0-dvc2-base1
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.x'
+      - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
